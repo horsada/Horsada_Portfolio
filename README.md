@@ -17,6 +17,7 @@ Portfolio Projects are ordered by date.
 - Implemented in SystemVerilog.
 - Non-pipelined 3 cycle CPU based off the MIPS 1 ISA.
 - Harvard-based architecture.
+- [MIPS CPU Project Report PDF link](https://github.com/horsada/Horsada_Portfolio/files/6437660/mips_data_sheet.pdf)
 
 # Project 4: [Circuit Simulator](https://github.com/horsada/Circuit_Simulator)
 - Implemented in C++.
