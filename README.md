@@ -26,6 +26,7 @@ voltage and current sources into graphical representations of voltage/current of
 component over time. 
 - Graphs are done using MATLAB.
 
-![LTSPICE_Circuit_1](https://user-images.githubusercontent.com/59962393/117362311-015a3480-aeb3-11eb-9549-b36812b1b3a6.JPG)       ![LTSPICE_graph_1](https://user-images.githubusercontent.com/59962393/117364383-bf7ebd80-aeb5-11eb-8f0c-54f0f9526cbb.JPG)
+![LTSPICE_Circuit_1](https://user-images.githubusercontent.com/59962393/117362311-015a3480-aeb3-11eb-9549-b36812b1b3a6.JPG)   ![LTSPICE_graph_1](https://user-images.githubusercontent.com/59962393/117364721-2bf9bc80-aeb6-11eb-9593-6520f82ef86f.JPG)
+
 
 
