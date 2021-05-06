@@ -12,6 +12,7 @@ Portfolio Projects are ordered by date.
 - Use C for high level synthesis
 - Game implemented in Python.
 - AWS Server to communicate between 2 players.
+- [FPGA-based Ping Pong game PDF Report link](https://github.com/horsada/Horsada_Portfolio/files/6437688/group_13_report.pdf)
 
 # Project 3: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
 - Implemented in SystemVerilog.
