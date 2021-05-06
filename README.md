@@ -25,3 +25,6 @@ Portfolio Projects are ordered by date.
 voltage and current sources into graphical representations of voltage/current of each
 component over time. 
 - Graphs are done using MATLAB.
+
+![LTSPICE_Circuit_1](https://user-images.githubusercontent.com/59962393/117362311-015a3480-aeb3-11eb-9549-b36812b1b3a6.JPG)
+
