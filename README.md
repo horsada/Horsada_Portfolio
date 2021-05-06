@@ -1,6 +1,6 @@
 # Horsada_Portfolio
-Adam Horsler Projects Portfolio 
-Projects are ordered by date.
+Adam Horsler Projects 
+Portfolio Projects are ordered by date.
 
 # Project 1: [C -> MIPS assembly Compiler](https://github.com/LangProc/langproc-2020-cw-Morningism)
 - Implemented using Flex/Yacc for lexing and parsing, then traversing the AST is done using C++.
