@@ -2,11 +2,18 @@
 Adam Horsler Projects 
 Portfolio Projects are ordered by date.
 
-# Project 1: [C -> MIPS assembly Compiler](https://github.com/horsada/Morningism)
+# Project 1: [Semi-Autonomous Rover](https://github.com/horsada/WAP_Rover)
+- Year 2 Summer Design Project
+- Team of 6, each with their own subsystem
+- I worked on the Vision component, which can be found in the Vision folder
+- Implemented on an FPGA and D8M Terasic Camera, using Quartus and Eclipse
+- [Year 2 Summer Design Projet Report]()
+
+# Project 2: [C -> MIPS assembly Compiler](https://github.com/horsada/Morningism)
 - Implemented using Flex/Yacc for lexing and parsing, then traversing the AST is done using C++.
 - Input = C-- file, Output = MIPS assembly.
 
-# Project 2: [FPGA-based Ping Pong game](https://github.com/horsada/InfoProcessing2020)
+# Project 3: [FPGA-based Ping Pong game](https://github.com/horsada/InfoProcessing2020)
 - FPGA hardware and software programming done using Quartus Prime and Eclipse.
 - Intel DE-10 Lite FPGA with accelerometer for interacting with the game.
 - Use C for high level synthesis
@@ -14,13 +21,13 @@ Portfolio Projects are ordered by date.
 - AWS Server to communicate between 2 players.
 - [FPGA-based Ping Pong game PDF Report link](https://github.com/horsada/Horsada_Portfolio/files/6437688/group_13_report.pdf)
 
-# Project 3: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
+# Project 4: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
 - Implemented in SystemVerilog.
 - Non-pipelined 3 cycle CPU based off the MIPS 1 ISA.
 - Harvard-based architecture.
 - [MIPS CPU Project Report PDF link](https://github.com/horsada/Horsada_Portfolio/files/6437660/mips_data_sheet.pdf)
 
-# Project 4: [Circuit Simulator](https://github.com/horsada/Circuit_Simulator)
+# Project 5: [Circuit Simulator](https://github.com/horsada/Circuit_Simulator)
 - Implemented in C++.
 - Similar to LTSpice.
 - Converts a netlist of passive components (resistors, capacitors and cnductors) and 
