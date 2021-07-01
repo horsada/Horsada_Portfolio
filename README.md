@@ -6,7 +6,7 @@
 - Team of 6, each with their own subsystem
 - I worked on the Vision component, which can be found in the Vision folder
 - Implemented on an FPGA and D8M Terasic Camera, using Quartus and Eclipse
-- [Year 2 Summer Design Projet Report](https://github.com/horsada/Horsada_Portfolio/blob/main/Summer%20Design%20Project%20-%20Group%2020%20-%20WAP.pdf)
+- [Year 2 Summer Design Project Report](https://github.com/horsada/Horsada_Portfolio/blob/main/Summer%20Design%20Project%20-%20Group%2020%20-%20WAP.pdf)
 
 ![Rover_3D_Model](https://user-images.githubusercontent.com/59962393/122831886-6f7f7d00-d2e2-11eb-8298-77881cb9df2f.JPG) ![Coloured_Ping_Pong_Balls](https://user-images.githubusercontent.com/59962393/122832225-f5032d00-d2e2-11eb-88d9-77ae5236a137.JPG)
 
