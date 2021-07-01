@@ -35,7 +35,7 @@
 voltage and current sources into graphical representations of voltage/current of each
 component over time. 
 - Graphs are done using MATLAB.
-- [Circuit Simulator Project Report PDF link.](https://github.com/horsada/Horsada_Portfolio/files/6437633/ELEC40006.-.Final.Report.pdf)
+- [Circuit Simulator Project Report PDF link.](https://github.com/horsada/Horsada_Portfolio/blob/main/ELEC40006.-.Final.Report%20(1).pdf)
 
 ![LTSPICE_Circuit_1](https://user-images.githubusercontent.com/59962393/117362311-015a3480-aeb3-11eb-9549-b36812b1b3a6.JPG)   ![LTSPICE_graph_1](https://user-images.githubusercontent.com/59962393/117364721-2bf9bc80-aeb6-11eb-9593-6520f82ef86f.JPG)
 
