@@ -1,6 +1,5 @@
-# Horsada_Portfolio
-Adam Horsler Projects 
-Portfolio Projects are ordered by date.
+# Adam Horsler Professional Portfolio
+## Portfolio Projects are ordered by date.
 
 # Project 1: [Semi-Autonomous Rover](https://github.com/horsada/WAP_Rover)
 - Year 2 Summer Design Project
