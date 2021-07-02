@@ -28,6 +28,7 @@
 - Non-pipelined 3 cycle CPU based off the MIPS 1 ISA.
 - Harvard-based architecture.
 - [MIPS CPU Project Report PDF link](https://github.com/horsada/Horsada_Portfolio/blob/main/mips_data_sheet%20(2).pdf)
+![MIPS_CPU_Structure](https://github.com/horsada/Horsada_Portfolio/blob/main/images/MIPS_CPU_Structure.JPG)
 
 # Project 5: [Circuit Simulator](https://github.com/horsada/Circuit_Simulator)
 - Implemented in C++.
