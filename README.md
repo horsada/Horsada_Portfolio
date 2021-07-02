@@ -13,6 +13,7 @@
 # Project 2: [C -> MIPS assembly Compiler](https://github.com/horsada/Morningism)
 - Implemented using Flex/Yacc for lexing and parsing, then traversing the AST is done using C++.
 - Input = C-- file, Output = MIPS assembly.
+- Note: This project does not have an official PDF report; the details can be found in the **readme.md** file.
 
 # Project 3: [FPGA-based Ping Pong game](https://github.com/horsada/InfoProcessing2020)
 - FPGA hardware and software programming done using Quartus Prime and Eclipse.
@@ -21,6 +22,7 @@
 - Game implemented in Python.
 - AWS Server to communicate between 2 players.
 - [FPGA-based Ping Pong game PDF Report link](https://github.com/horsada/Horsada_Portfolio/blob/main/IP_Project_Report.pdf)
+- 
 ![FPGA_DE10_LITE](https://github.com/horsada/Horsada_Portfolio/blob/main/images/FPGA_board.JPG)
 
 # Project 4: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
