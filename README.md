@@ -8,7 +8,7 @@
 - Implemented on an FPGA and D8M Terasic Camera, using Quartus and Eclipse
 - [Year 2 Summer Design Project Report](https://github.com/horsada/Horsada_Portfolio/blob/main/Summer%20Design%20Project%20-%20Group%2020%20-%20WAP.pdf)
 
-![Rover_3D_Model](https://user-images.githubusercontent.com/59962393/122831886-6f7f7d00-d2e2-11eb-8298-77881cb9df2f.JPG) ![Coloured_Ping_Pong_Balls](https://user-images.githubusercontent.com/59962393/122832225-f5032d00-d2e2-11eb-88d9-77ae5236a137.JPG)
+![Rover_3D_Model](https://github.com/horsada/Horsada_Portfolio/blob/main/images/Rover_3D_Model.JPG) ![Coloured_Ping_Pong_Balls](https://github.com/horsada/Horsada_Portfolio/blob/main/images/coloured_ping_pong_balls.JPG)
 
 # Project 2: [C -> MIPS assembly Compiler](https://github.com/horsada/Morningism)
 - Implemented using Flex/Yacc for lexing and parsing, then traversing the AST is done using C++.
@@ -21,6 +21,7 @@
 - Game implemented in Python.
 - AWS Server to communicate between 2 players.
 - [FPGA-based Ping Pong game PDF Report link](https://github.com/horsada/Horsada_Portfolio/blob/main/IP_Project_Report.pdf)
+- ![FPGA_DE10_LITE](https://github.com/horsada/Horsada_Portfolio/blob/main/images/FPGA_board.JPG)
 
 # Project 4: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
 - Implemented in SystemVerilog.
@@ -37,7 +38,7 @@ component over time.
 - Graphs are done using MATLAB.
 - [Circuit Simulator Project Report PDF link.](https://github.com/horsada/Horsada_Portfolio/blob/main/ELEC40006.-.Final.Report%20(1).pdf)
 
-![LTSPICE_Circuit_1](https://user-images.githubusercontent.com/59962393/117362311-015a3480-aeb3-11eb-9549-b36812b1b3a6.JPG)   ![LTSPICE_graph_1](https://user-images.githubusercontent.com/59962393/117364721-2bf9bc80-aeb6-11eb-9593-6520f82ef86f.JPG)
+![LTSPICE_Circuit_1](https://github.com/horsada/Horsada_Portfolio/blob/main/images/Example_Circuit.JPG)   ![LTSPICE_graph_1](https://github.com/horsada/Horsada_Portfolio/blob/main/images/Circuit_MATLAB_Graph.JPG)
 
 
 
