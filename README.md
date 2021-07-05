@@ -23,7 +23,7 @@
 - AWS Server to communicate between 2 players.
 - [FPGA-based Ping Pong game PDF Report link](https://github.com/horsada/Horsada_Portfolio/blob/main/IP_Project_Report.pdf)
 
-![FPGA_DE10_LITE](https://github.com/horsada/Horsada_Portfolio/blob/images/FPGA_board.JPG)
+![FPGA_DE10_LITE](https://github.com/horsada/Horsada_Portfolio/blob/main/FPGA_board.JPG)
 
 # Project 4: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
 - Implemented in SystemVerilog.
