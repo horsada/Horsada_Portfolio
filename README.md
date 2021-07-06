@@ -8,7 +8,7 @@
 - Implemented on an FPGA and D8M Terasic Camera, using Quartus and Eclipse
 - [Year 2 Summer Design Project Report](https://github.com/horsada/Horsada_Portfolio/blob/main/Summer%20Design%20Project%20-%20Group%2020%20-%20WAP.pdf)
 
-![Rover_3D_Model](https://github.com/horsada/Horsada_Portfolio/blob/main/Rover_3D_Model.JPG) ![Coloured_Ping_Pong_Balls](https://github.com/horsada/Horsada_Portfolio/blob/main/coloured_ping_pong_balls.JPG)
+![Rover_3D_Model](/https://github.com/horsada/Horsada_Portfolio/blob/main/Rover_3D_Model.JPG) ![Coloured_Ping_Pong_Balls](/https://github.com/horsada/Horsada_Portfolio/blob/main/coloured_ping_pong_balls.JPG)
 
 # Project 2: [C -> MIPS assembly Compiler](https://github.com/horsada/Morningism)
 - Implemented using Flex/Yacc for lexing and parsing, then traversing the AST is done using C++.
