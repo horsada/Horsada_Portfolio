@@ -23,7 +23,7 @@
 - AWS Server to communicate between 2 players.
 - [FPGA-based Ping Pong game PDF Report link](https://github.com/horsada/Horsada_Portfolio/blob/main/IP_Project_Report.pdf)
 
-![FPGA_DE10_LITE](https://github.com/horsada/Horsada_Portfolio/blob/main/FPGA_board.JPG)
+![FPGA_DE10_LITE](/FPGA_board.JPG)
 
 # Project 4: [MIPS CPU](https://github.com/horsada/MIPS_CPU)
 - Implemented in SystemVerilog.
@@ -31,7 +31,7 @@
 - Harvard-based architecture.
 - [MIPS CPU Project Report PDF link](https://github.com/horsada/Horsada_Portfolio/blob/main/mips_data_sheet%20(2).pdf)
 
-![MIPS_CPU_Structure](https://github.com/horsada/Horsada_Portfolio/blob/main/MIPS_CPU_Structure.JPG)
+![MIPS_CPU_Structure](/MIPS_CPU_Structure.JPG)
 
 # Project 5: [Circuit Simulator](https://github.com/horsada/Circuit_Simulator)
 - Implemented in C++.
@@ -42,4 +42,4 @@ component over time.
 - Graphs are done using MATLAB.
 - [Circuit Simulator Project Report PDF link.](https://github.com/horsada/Horsada_Portfolio/blob/main/ELEC40006.-.Final.Report%20(1).pdf)
 
-![LTSPICE_Circuit_1](https://github.com/horsada/Horsada_Portfolio/blob/main/Example_Circuit.JPG)   ![LTSPICE_graph_1](https://github.com/horsada/Horsada_Portfolio/blob/main/Circuit_MATLAB_Graph.JPG)
+![LTSPICE_Circuit_1](/Example_Circuit.JPG)   ![LTSPICE_graph_1](/Circuit_MATLAB_Graph.JPG)
