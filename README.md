@@ -2,8 +2,8 @@
 ### Portfolio Projects are ordered by date.
 
 # Project 1: [Semi-Autonomous Rover](https://github.com/horsada/WAP_Rover)
-- Year 2 Summer Design Project
-- Team of 6, each with their own subsystem
+- Year 2 Summer Design Project.
+- Team of 6, each with their own subsystem.
 - I worked on the Vision component, which can be found in the Vision folder
 - Implemented on an FPGA and D8M Terasic Camera, using Quartus and Eclipse
 - [Year 2 Summer Design Project Report](https://github.com/horsada/Horsada_Portfolio/blob/main/Summer%20Design%20Project%20-%20Group%2020%20-%20WAP.pdf)
