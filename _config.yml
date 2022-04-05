@@ -6,3 +6,6 @@ nav:
     href:           "/"
   - name:           "experience"
     href:           "/experience"
+  - name:           "projects"
+    href:           "/projects"
+  

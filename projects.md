@@ -1,7 +1,6 @@
 ---
 title: Projects
-layout: template
-filename: projects
+permalink: /projects/
 --- 
 
 # Adam Horsler Professional Portfolio

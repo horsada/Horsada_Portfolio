@@ -1,7 +1,6 @@
 ---
 title: Experience
-layout: template
-filename: experience
+permalink: /experience/
 --- 
 
 Work Experience is done in chronological order, with the most recent being at the top.
