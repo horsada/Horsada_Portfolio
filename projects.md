@@ -1,5 +1,6 @@
 ---
 title: Projects
+layout: template
 permalink: /projects/
 --- 
 
