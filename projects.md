@@ -1,3 +1,9 @@
+---
+title: Projects
+layout: template
+filename: projects
+--- 
+
 # Adam Horsler Professional Portfolio
 ### Portfolio Projects are ordered by date.
 

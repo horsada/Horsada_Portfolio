@@ -1,1 +1,8 @@
 theme: jekyll-theme-cayman
+
+# Navigation
+nav:
+  - name:           "home"
+    href:           "/"
+  - name:           "experience"
+    href:           "/experience"
