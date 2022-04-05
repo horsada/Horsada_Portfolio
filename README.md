@@ -1,8 +1,6 @@
 # Adam Horsler Professional Portfolio
 ### Portfolio Projects are ordered by date.
 
-[Work Experience Page](https://horsada.github.io/Horsada_Portfolio/work_experience/)
-
 # Project 1: [Semi-Autonomous Rover](https://github.com/horsada/WAP_Rover)
 - Year 2 Summer Design Project.
 - Team of 6, each with their own subsystem.
