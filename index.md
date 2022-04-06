@@ -10,4 +10,4 @@ Landing page of my website.
 
 <img src="email_logo.jpg" width="50" height="50">(mailto:horsadam@gmail.com)
 
-[![Github page][GitHub-Mark.png]][https://github.com/horsada/]
+[![Github page](GitHub-Mark.png)](https://github.com/horsada/)
