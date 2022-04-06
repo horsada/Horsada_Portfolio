@@ -12,7 +12,7 @@ filename: experience
 ### Verisk Analytics: June 2022 - August 2022
 - Data Science Intern within the [Wood Mackenzie](https://www.woodmac.com/) Innovation & Analytics Lab
 
-![MTL Logo](<img src="https://github.com/horsada/Horsada_Portfolio/blob/main/mtl-logo_ccexpress.jpeg" width="100" height="100") 
+<img src="mtl-logo_ccexpress.jpeg" width="100" height="100">
 ### Imperial College [University Research Opportunities Program (UROP)](https://www.imperial.ac.uk/urop/): July 2021-August 2021
 - Engineering Intern at the [Manipulation and Touch Lab (MTL)](https://www.imperial.ac.uk/manipulation-touch/) within the Electrical and Electronic Engineering Department
 - Assisted in projects and work associated with Haptic Intelligence in Robotics
