@@ -6,8 +6,8 @@ filename: index
 
 Landing page of my website.
 
-<img src="linkedin.webp" width="100" height="100">(https://www.linkedin.com/in/adam-horsler-ab5a7116b/)
+<img src="linkedin.webp" width="40" height="40">(https://www.linkedin.com/in/adam-horsler-ab5a7116b/)
 
-<img src="email_logo.jpg" width="100" height="100">(https://www.linkedin.com/in/adam-horsler-ab5a7116b/)
+<img src="email_logo.jpg" width="50" height="50">(mailto:horsadam@gmail.com)
 
-<img src="GitHub-Mark.png" width="100" height="100">(https://www.linkedin.com/in/adam-horsler-ab5a7116b/)
+[![Github page][GitHub-Mark.png]][https://github.com/horsada/]
