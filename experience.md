@@ -19,7 +19,7 @@ filename: experience
 - Engineering Intern at the [Manipulation and Touch Lab (MTL)](https://www.imperial.ac.uk/manipulation-touch/) within the Electrical and Electronic Engineering Department
 - Assisted in projects and work associated with Haptic Intelligence in Robotics
  
-<img src="Rolls_royce_holdings_logo.png" width="250" height="300">
+<img src="Rolls_royce_holdings_logo.png" width="150" height="200">
 
 ### [Rolls-Royce PLC](https://www.rolls-royce.com/): September 2018 - August 2019
 - [Year In Industry Placement](https://www.etrust.org.uk/placements) Intern within the Research & Technology (R&T) Department of Rolls-Royce Control Systems.
