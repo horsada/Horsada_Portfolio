@@ -6,7 +6,7 @@ filename: index
 
 Landing page of my website.
 
-[![LinkedIn](linkedin.webp)](https://www.linkedin.com/in/adam-horsler-ab5a7116b/)
+[![LinkedIn](linkedin.webp = 250x250)](https://www.linkedin.com/in/adam-horsler-ab5a7116b/)
 
 [![Email](email_logo.jpg)](mailto:horsadam@gmail.com)
 
