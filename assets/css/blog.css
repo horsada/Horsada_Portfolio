@@ -3,6 +3,7 @@
 body {
     padding: 20px;
     background: url(../../assets/img/bg.png) repeat;
+    font-family: sans-serif;
   }
   
   /* Header/Blog Title */
@@ -74,4 +75,25 @@ body {
 
 .teal-text {
   color: #008073 !important;
+}
+
+h2 {
+  font-weight: 200;
+  margin-top: 0;
+  padding: 20px 20px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 200;
+  margin-top: 0;
+  padding: 20px 20px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-weight: 200;
+  margin-top: 0;
+  padding: 20px 20px;
+  text-transform: uppercase;
 }
