@@ -1,5 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
 body {
-    font-family: Arial;
     padding: 20px;
     background: url(../../assets/img/bg.png) repeat;
   }
@@ -36,8 +37,8 @@ body {
   /* Add a card effect for articles */
   .card {
     background: white;
-    /*padding: 20px;*/
-    /*margin-top: 20px;*/
+    padding: 20px;
+    margin-top: 20px;
   }
   
   /* Clear floats after the columns */
