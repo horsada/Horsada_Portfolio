@@ -3,6 +3,7 @@ body {
     background: url(../../assets/img/bg.png) repeat;
     font-family: sans-serif;
     font-size: 1.68rem;
+    text-align: center;
   }
   
   /* Header/Blog Title */
