@@ -62,3 +62,15 @@ body {
       padding: 0;
     }
   }
+
+  #intro.section .teal {
+    padding: 0 10px;
+  }
+
+.teal {
+  background-color: #008073 !important;
+}
+
+.teal-text {
+  color: #008073 !important;
+}
