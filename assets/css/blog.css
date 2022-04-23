@@ -9,7 +9,7 @@ body {
     padding: 30px;
     font-size: 40px;
     text-align: center;
-    background: #008073 ;
+    background: #008073;
   }
   
   /* Create two unequal columns that floats next to each other */
@@ -28,7 +28,7 @@ body {
   
   /* Fake image */
   .fakeimg {
-    background-color: #aaa;
+    background-color: white;
     width: 100%;
     padding: 20px;
   }
