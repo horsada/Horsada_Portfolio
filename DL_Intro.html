@@ -39,98 +39,83 @@
           </div>
       </div>
   
-      <div class="card">
+    <div class="card">
       <h4 class="page-title white-text teal">Components of Learning</h4>
-          <div class="fakeimg">
-              <img alt="Motivation sign" style="height:200px;" 
-              src="assets/img/blog/motivation/Motivation_Dopamine.jpg" />
               <p>The map below shows the components of learning and how they
                   relate to allow a ML model to "learn".
               </p>
               <img alt="Components of Learning" style="height:100px;" 
-              src="assets/img/blog/motivation/Motivation_Dopamine.jpg" />
-          </div>
-      <h4 class="page-title white-text teal">Serotonin</h4>
-      <div class="fakeimg">
-          <img alt="Motivation sign" style="height:200px;" 
-          src="assets/img/blog/motivation/Motivation_Serotonin.PNG" />
-          <p>Serotonin is often described as the "here and now" hormone due to the contentment
-          effects it has. It causes us to focus on what we already have, as opposed to dopamine
-          which focuses on what we don't have. The area of the brain called raphe is responsible
-          for the release of serotonin. The optimal individual seeks to balance serotonin 
-          and dopamine.
+              src="assets/img/blog/ICL_DL/DL_Part_0/ML_Components_Of_Learning.PNG"/>
+              <p>We define the Domain to be the dimensionality of the data <b>x</b>, which are
+                  also called its' features. For supervised learning, we have true output labels,
+                  <b>y</b> defined for each input, <b>x</b>. We feed the input and output labels
+                  (<b>x</b>, <b>y</b>) into the model, often in batches, to learn from. This is
+                  shown by the Learners arrow. The target function, <b>f</b>, is unknown and
+                  it is the goal of the ML model to learn this function, i.e. to get
+                  <b>g --> f</b>.
+              </p>
+              <p>One way to describe a model is through its' hypothesis class, <b>H</b>, which 
+                defines the set of possible configurations a model can choose from. 
+                Thus it can be seen as a way to limit how well (or too well!) a model can 
+                reach its goal as defined above. It is hoped that the model will choose 
+                the best configuration to reach this goal through learning. 
+              </p>
+              <p>The error function and error minimisation are the primary ways an ML model
+                learns. For each task and scenario, we choose these to give the so that it can
+                track how well it is learning (error function) and optimise itself (error minimisation) 
+                to reach its goal.
+              </p>
+    </div>
+
+    <div class="card"></div>
+        <h4 class="page-title white-text teal">Perceptron and Neural Networks</h4>
+          <p>The perceptron, pictured below, was insipred by the biological neuron found
+              in the brain. It consists of weights, <b>w</b>, multiplied by a data point, <b>x</b>,
+              through an activiation function, <b>theta(<b>w^Tx</b>), to its output <b>y_hat</b>.
           </p>
-      </div>
-      <h4 class="page-title white-text teal">Procrastination</h4>
-      <div class="fakeimg">
-          <img alt="Motivation sign" style="height:200px;" 
-          src="assets/img/blog/motivation/Motivation_Procrastination.jpg" />
-          <p>Procrastination is the act of delaying or postponing a task. It is often the
-          first hurdle someone must overcome to reach their goals and thus is an important 
-          aspect of motivation. Procrastinators can be somewhat grouped into 2 areas: those 
-          that relish the adrenaline and stress that comes from an impending deadline and those 
-          that simply do not produce enough dopamine. 
+          <img alt="Perceptron" style="height:100px;" 
+          src="assets/img/blog/ICL_DL/DL_Part_0/Perceptron"/>
+          <p>The most basic neural network is essentially a stacked version of the perceptron, i.e.
+              a multi-layer perceptron model with activation functions at each node. The structure
+              is shown in the image below. 
           </p>
-          <p>The first group could benefit from the following tools: super-oxygenation breathing, caffeine and/or L-Tyrosine. 
-          Super-oxygenated breathing can trigger a massive release of adrenaline. Similarly, 
-          ingesting caffeine causes a release in dopamine, the precursor to adrenaline. Finally,
-          L-tyrosine is an amino-acid precursor to L-DOPA, which itself is a precursor to dopamine.
-          The second group could benefit from consuming the bean Mucuna pruriens due to its high L-DOPA
-          content and/or antidepressants as they are an enabler for the release of dopamine.
+          <img alt="Neural Network" style="height:100px;" 
+          src="assets/img/blog/ICL_DL/DL_Part_0/Neural_Network.PNG"/>
+          <p>We can see that each node is connected to all of its previous layer nodes. One layer
+              is the veritcal combination of nodes, where the first layer is the input data <b>x</b>. 
+              Each line represents the multiplacation of a weight, <b>w_ij</b> and the output of the 
+              previous node <b>s_ij</b> (the i and j notation is not shown in the diagram, but let a 
+              layer be defined by i and vertical location of node be j.)
           </p>
-      </div>
-      <h4 class="page-title white-text teal">Prolactin</h4>
-      <div class="fakeimg">
-          <img alt="Motivation sign" style="height:200px;" 
-          src="assets/img/blog/motivation/prolactin.jpg" />
-          <p>Prolactin is a hormone that is often produced after a major event, for example
-          graduation or sexual orgasm. It arises somewhat inversely to dopamine. Taking the sexual 
-          reproduction example, dopamine is release on anticipation and consumption of sex, 
-          whereas prolactin is released after orgasm. 
+          <p>The "forward pass" refers to the calculation of the outputs of each node, from left
+              to right. It is the way an input data point is mapped to an output. The dimension of the output
+              depends on the task; the above picture has an output dimensionality D_h = 1 which is commonly
+              used in binary classification or regression tasks. The forward pass is essentialy a scaled up
+              version of the perceptron description in the first paragraph. A worked example of a
+              forward pass on an MLP is shown below. 
           </p>
-          <p>Prolactin is associated with lethargy and stillness
-          and is the main driver behind the "refractory period" of males, which is the time taken that a
-          male cannot gain an erection or ejaculate again. The refactory period decreases when
-          a novel mating partner is introduced, a result of the novelty effect on dopamine release.
-          </p>
-          <p>A person can take prolactin inhibitors to diminish these levels of lethargy, namely Vitamin B6 
-          and/or zinc.
-          </p>
-      </div>
-      <h4 class="page-title white-text teal">Movement</h4>
-      <div class="fakeimg">
-          <img alt="Motivation sign" style="height:200px;" 
-          src="assets/img/blog/motivation/Motivation_Movement.jpg" />
-          <p>Dopamine inherently makes us anti-lazy. This was observed in a study on rats, where
-          Group A of rats had unchanged brains, and Group B of rats had dopamine-depleted brains.
-          Group B wouldn't move 1 rat length to receive food, despite still achieving pleasure 
-          from the consumption of food. This shows that Group B's desire for movement was significantly 
-          reduced as a result of the lack of dopamine.
-          </p> 
-          <p>Some tools that can act as nervous system stimulants are Beta-Phenylethylamine 
-          (PEA) and Acetyl-L-carnitine. 
-          </p>
-      </div>
-      <h4 class="page-title white-text teal">Dopamine Scheduling</h4>
-      <div class="fakeimg">
-          <img alt="Motivation sign" style="height:200px;" 
-          src="assets/img/blog/motivation/Motivation_Dopamine_Scheduling.jpg" />
-          <p>Dopamine scheduling is a technique that aims to leverage the effects of dopamine on
-          motivation towards achieving and sustaining goals. The key principle behind dopamine 
-          scheduling is that dopamine is very subjective. This has been shown in various studies 
-          and is closely related to the idea of growth mindsets. The central idea, known as
-          intermittent reinforcement scheduling, is seen in gambling. It is one of the most
-          powerful ways to keep someone doing something as it plays with the hope and anticipation
-          of receiving a reward.
-          </p>
-          <p>To put the technique in a single, actionable phrase: "enjoy your wins,
-          but not all of them." This helps to fight 2 problems associated with dopamien release: 1. The 
-          subsequent "crash" after a release in dopamine and 2. The diminishing release of dopamine from
-          continued rewards. It is essential to enjoy the wins at random.
-          </p>
-      </div>
-      </div>
-  </div>
+          <img alt="Forward Pass" style="height:100px;" 
+          src="assets/img/blog/ICL_DL/DL_Part_0/Forward_Pass.PNG"/>
+    </div>
+
+    <div class="card">
+      <h4 class="page-title white-text teal">Gradient Descent and Backpropagation</h4>
+        <p></p>
+    </div>
+
+    <div>
+      <h4 class="page-title white-text teal">Learning Curves</h4>
+        <p>
+        </p>
+    </div>
+
+    <div class="card">
+      <h4 class="page-title white-text teal">Regularisation</h4>
+        <p>
+        </p>
+    </div>
+    </div>
+</div>
   
       <div class="rightcolumn">
         <div class="card">
