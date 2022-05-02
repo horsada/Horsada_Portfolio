@@ -100,19 +100,79 @@
 
     <div class="card">
       <h4 class="page-title white-text teal">Gradient Descent and Backpropagation</h4>
-        <p></p>
+        <p>Gradient descent is a general method for non-linear optimization. It is often used
+            in ML when a model doesn't have a closed form solution, for example in 
+            neural networks. It is the fundamental way in which models optimise to reach their goal,
+            and forms a part of the wider backpropagation algorithm. Gradient descent in its 
+            simplest form is formulated as: <b>w_{t+1} = w_t + mui*v</b>, where <b>v</b> is the
+            normalised direction for finding the local minimum error and <b>mui</b> is the learning rate.
+            The learning rate affects how many steps it takes to find the local error minimum.
+            The graphs below show how different learning rates impact the speed of convergence.
+            <img alt="Forward Pass" style="height:100px;" 
+            src="assets/img/blog/ICL_DL/DL_Part_0/Learning_Rate_Effect.PNG"/>
+            </b>
+        </p>
+        <p>Backpropagation is the fundamental way neural networks learn and comprosises of all the 
+            discussed topics. The algorithm is as follows:
+        </p>
+        <ol>
+            <li>Initialise weights <b>w_ij</b> at random</li>
+            <li>For t = 1,2...K:</li>
+            <ol>
+                <li>Forward pass: Compute all <b>x_j</b></li>
+                <li>Backward pass: Compute all <b>delta_j</b></li>
+                <li>Gradient Descent: <b>w_ij = w_ij - mui*x_y*delta_j</b></li>
+            </ol>
+        <li>Return final weights <b>w_ij</b></li>
+        </ol>
     </div>
 
     <div>
       <h4 class="page-title white-text teal">Learning Curves</h4>
-        <p>
+        <p>Underfitting and overfitting are problems associated with ML models
+            and their affect can be shown with learning curves. Underfitting is
+            when a model has not learnt all the features it needs to reach its
+            goal of approximating the underlying function. The most prominent reasons
+            for underfitting are:
+            <li>Not enough training time (in epochs)</li>
+            <li>Not enough complexity in the model</li>
         </p>
+        <p>Overfititng occurs when the model begins to learn the noise of the target
+            function instead of the features. The most prominent reasons for overfitting is:
+            <li>Not enough data points</li>
+            <li>Too much training time</li>
+            <li>Too high model complexity</li>
+        </p>
+        <p>Thus, the optimal point at which to stop training the model, i.e. stop learning,
+            is at the intersection of underfitting and overfitting. This can be measured 
+            through the point at which the test/validation error begins to increase but the
+            training error decreases. This is shown in the learning curves below.
+        </p>
+        <img alt="Forward Pass" style="height:100px;" 
+        src="assets/img/blog/ICL_DL/DL_Part_0/One_H.PNG"/>
+        <img alt="Forward Pass" style="height:100px;" 
+        src="assets/img/blog/ICL_DL/DL_Part_0/Many_H.PNG"/>
     </div>
 
     <div class="card">
       <h4 class="page-title white-text teal">Regularisation</h4>
-        <p>
+        <p>A popular tool to aid in ML model learning is regularisation. Regularisation
+            enforces an "overfit penalty" on the error function in an attempt to 
+            guide the model to the optimal point on the learning curve as described previously.
         </p>
+        <p>There are various regularisation techniques, for example L2-Loss restricts the 
+            possible <b>w </b> weights to within a circle of values. However, they are all based
+            on a fundamental premise: Occam's Razor. Occam's Razor essentially states that
+            simpler is usually better. This is based on the scientific notion that
+            noise is not smooth, and an ML model's learning seeks to ignore noise. 
+            Regularisation Thus incentivises the model's learnt function towards smoother, simpler functions.
+        </p>
+        <p>Regularisation introduces another(s) hyperparameter, <b>lambda</b>, to the model. This hyperparameter
+            controls how much weighting the model attributes to regularisation. The effect of 
+            different <b>lambda</b> values on learning is shown below.
+        </p>
+        <img alt="Forward Pass" style="height:100px;" 
+        src="assets/img/blog/ICL_DL/DL_Part_0/Regularisation.PNG"/>
     </div>
     </div>
 </div>
