@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
       <!-- Custom Styles-->
       <link rel="stylesheet" href="assets/css/blog.css" />
-      <title>Blog | DL Intro</title>
+      <title>Blog | DL Part 1</title>
   </head>
   
   <div class="header">
@@ -26,149 +26,255 @@
         <div class="card">
           <h2 class="page-title white-text teal">OUTLINE</h2>
             <p>This part of the blog will be an introduction to a popular family of neural networks, 
-                convolutional neural networks.
+                Convolutional Neural Networks (CNN's).
             </p>
-            <li>Components of Learning</li>
-            <li>Perceptron and Neural Networks</li>
-            <li>Gradient Descent and Backpropagation</li>
-            <li>Learning Curves</li>
-            <li>Regularisation</li>
+            <li>Motivation</li>
+            <li>Filters and Convolution</li>
+            <li>Padding and Strides</li>
+            <li>Convolutional Layer</li>
+            <li>Pooling Layer</li>
+            <li>Fully Connected Layer</li>
+            <li>Binary Classification</li>
+            <li>MultiClass Classification</li>
+            <li>Regression</li>
+            <p>By the end of this part, you should be able to understand the 
+              picture below, which consists of a basic CNN architecture. 
+            </p>
+            <img alt="CNN Intro" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/CNN_Intro.PNG"/>
       </div>
   
     <div class="card">
-      <h4 class="page-title white-text teal">Components of Learning</h4>
-              <p>The map below shows the components of learning and how they
-                  relate to allow a ML model to "learn".
+      <h4 class="page-title white-text teal">Motivation</h4>
+              <p>We first start by explaining the motivation behind this
+                family of acrchitectures - why bother with CNN's when we 
+                have just learnt about fully connected neural networks?
               </p>
-              <img alt="Components of Learning" style="height:200px;" 
-              src="assets/img/blog/ICL_DL/DL_Part_0/ML_Components_Of_Learning.PNG"/>
-              <p>We define the Domain to be the dimensionality of the data <b>x</b>, which are
-                  also called its' features. For supervised learning, we have true output labels,
-                  <b>y</b> defined for each input, <b>x</b>. We feed the input and output labels
-                  (<b>x</b>, <b>y</b>) into the model, often in batches, to learn from. This is
-                  shown by the Learners arrow. The target function, <b>f</b>, is unknown and
-                  it is the goal of the ML model to learn this function, i.e. to get
-                  <b>g --> f</b>.
+              <p>Let's say we would like to use DL for a task which involves
+                images, for example classifying whether a picture has a dog or 
+                not. This would thus be a binary classification task as discussed
+                in the last part. An image can be formulated as a Length x Width x Depth
+                matrix. Say our image is 30x30x3 pixels, for it to be passed into a fully connected
+                neural network would require converting it to 1D, thus 30x30x3 -> 2700 input layer
+                weights. Now let's say we would like 5 layers in the network before the classification
+                layer: 2700 * 5 = 13,500 weights total (we ignore bias weight for simplicity.) 
+                Not only is this a lot of parameters for a small input feature space (high complexity ->
+                more likely for model to overfit), but logically our network is not optimised to
+                take advantage of the fact that in images, pixels are spacially correlated. Taking
+                advantage of this fact enables better feature extraction, and therefore overall learning.
+                A fully connected neural network is not inherently architectured to do this as each output
+                from the previous layer is connected to each neuron on the current layer.
               </p>
-              <p>One way to describe a model is through its' hypothesis class, <b>H</b>, which 
-                defines the set of possible configurations a model can choose from. 
-                Thus it can be seen as a way to limit how well (or too well!) a model can 
-                reach its goal as defined above. It is hoped that the model will choose 
-                the best configuration to reach this goal through learning. 
+              <p>We conclude the reason <b>not</b> to use a fully connected neural network by summarising with
+              the problems:
               </p>
-              <p>The error function and error minimisation are the primary ways an ML model
-                learns. For each task and scenario, we choose these to give the so that it can
-                track how well it is learning (error function) and optimise itself (error minimisation) 
-                to reach its goal.
-              </p>
+              <li>Pixels are spatially correlated</li>
+              <li>High complexity can tend to overfitting and/or long training times</li>
+              <p>The next question would then be: how do CNN's solve these problems?</p>
     </div>
 
     <div class="card">
-        <h4 class="page-title white-text teal">Perceptron and Neural Networks</h4>
-          <p>The perceptron, pictured below, was insipred by the biological neuron found
-              in the brain. It consists of weights, <b>w</b>, multiplied by a data point, <b>x</b>,
-              through an activiation function, theta(<b>w^Tx</b>), to its output <b>y_hat</b>.
+        <h4 class="page-title white-text teal">Filters and Convolution</h4>
+          <p>Before going into the workings of CNN's, there are some pre-requisite concepts
+            and termniology to discuss.
           </p>
-          <img alt="Perceptron" style="height:200px;" 
-          src="assets/img/blog/ICL_DL/DL_Part_0/Perceptron.PNG"/>
-          <p>The most basic neural network is essentially a stacked version of the perceptron, i.e.
-              a multi-layer perceptron model with activation functions at each node. The structure
-              is shown in the image below. 
+          <p>We start with filters. A filter is a (usually) a 2D matrix of values. Before
+            DL became mainstream, a filters' values were hardcoded to perform a specific task.
+            For example, a a "moving average" filter can blur an image, as the filter values
+            perform an averaging of the pixels they cover. Another filter with different values can
+            sharpen an image, or with different values they can distinguish edges in an image.
+            These 3 examples are shown in the image below. The filters are all 3x3, however this isn't
+            necessary.
           </p>
-          <img alt="Neural Network" style="height:200px;" 
-          src="assets/img/blog/ICL_DL/DL_Part_0/Neural_Network.PNG"/>
-          <p>We can see that each node is connected to all of its previous layer nodes. One layer
-              is the veritcal combination of nodes, where the first layer is the input data <b>x</b>. 
-              Each line represents the multiplacation of a weight, <b>w_ij</b> and the output of the 
-              previous node <b>s_ij</b> (the i and j notation is not shown in the diagram, but let a 
-              layer be defined by i and vertical location of node be j.)
+          <img alt="Filter affects" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Convolution_Different_Filters.PNG"/>
+          <p>Filters can only achieve their desired effects using a mathematical process known
+            as convolution. Convolution in this sense is can be described as flipping the filter,
+            i.e. negating it, then shifting it across the input image with a defined stride.
+            We will discuss the effects of different strides in the next section, so for now just 
+            assume the filter moves across and down the 2D image 1 pixel at a time (stride = 1).
+            The filter weights are multiplied by the corresponding pixel feature (e.g. intensity)
+            and are then added together. The process is shown mathematically in the 1D and 2D case below:
+            <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Convolution_Different_Filters.PNG"/>
           </p>
-          <p>The "forward pass" refers to the calculation of the outputs of each node, from left
-              to right. It is the way an input data point is mapped to an output. The dimension of the output
-              depends on the task; the above picture has an output dimensionality D_h = 1 which is commonly
-              used in binary classification or regression tasks. The forward pass is essentialy a scaled up
-              version of the perceptron description in the first paragraph. A worked example of a
-              forward pass on an MLP is shown below. 
+          <p>Putting both these concepts together, we can see the output of the convolutional filter
+            below:
           </p>
-          <img alt="Forward Pass" style="height:200px;" 
-          src="assets/img/blog/ICL_DL/DL_Part_0/Forward_Pass.PNG"/>
+          <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Filter_Working_Example.PNG"/>
+          <p>It is worth noting that this filter is 2x2, as opposed to the 3x3 filters shown earlier.
+            In addition, the input dimension is 3x3, whereas the input dimension is 2x2. Thus,
+            we can see that "downsampling" has occured. The parameters padding and stride number
+            allow us to change the output within the same layer, discussed in the next section.
+          </p>
     </div>
 
     <div class="card">
-      <h4 class="page-title white-text teal">Gradient Descent and Backpropagation</h4>
-        <p>Gradient descent is a general method for non-linear optimization. It is often used
-            in ML when a model doesn't have a closed form solution, for example in 
-            neural networks. It is the fundamental way in which models optimise to reach their goal,
-            and forms a part of the wider backpropagation algorithm. Gradient descent in its 
-            simplest form is formulated as: <b>w_{t+1} = w_t + mui*v</b>, where <b>v</b> is the
-            normalised direction for finding the local minimum error and <b>mui</b> is the learning rate.
-            The learning rate affects how many steps it takes to find the local error minimum.
-            The graphs below show how different learning rates impact the speed of convergence.
-            </p>
-            <img alt="Forward Pass" style="height:200px;" 
-            src="assets/img/blog/ICL_DL/DL_Part_0/Learning_Rate_Effect.PNG"/>
-        <p>Backpropagation is the fundamental way neural networks learn and comprosises of all the 
-            discussed topics. The algorithm is as follows:
+      <h4 class="page-title white-text teal">Padding and Stride</h4>
+        <p>Padding is a technique where we append a value to the sides of the input before
+          convolution using a filter. There are in general 3 forms of padding:
+          <li>VALID: no padding</li>
+          <li>SAME: add P = F - 1 zeros</li>
+          <li>FULL: add P = 2(F-1) zeros</li>
+          The SAME padding results in <b>H_o = H_i</b> for Stride = 1 while FULL padding
+          results in <b>H_o = H_i + 2(F-1)</b> for Stride = 1. Below is an example of padding.
         </p>
-        <ol>
-            <li>Initialise weights <b>w_ij</b> at random</li>
-            <li>For t = 1,2...K:</li>
-            <ol>
-                <li>Forward pass: Compute all <b>x_j</b></li>
-                <li>Backward pass: Compute all <b>delta_j</b></li>
-                <li>Gradient Descent: <b>w_ij = w_ij - mui*x_y*delta_j</b></li>
-            </ol>
-        <li>Return final weights <b>w_ij</b></li>
-        </ol>
+        <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Padding.PNG"/>
+        <p>Stride defines the step of the shift when applying the convolutional filter.
+          For example, a stride of 1x1 shifts the filter 1 pixel at a time, whereas a stride of
+          2x2 skips one pixel horizontally and vertically. This is shown below.
+        </p>
+        <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Padding.PNG"/>
+        <p>With these prerequisite techniques now discussed, we can look at the convolutional layer
+          as a whole, the fundamental layer of a CNN.
+        </p>
     </div>
 
     <div class="card">
-      <h4 class="page-title white-text teal">Learning Curves</h4>
-        <p>Underfitting and overfitting are problems associated with ML models
-            and their affect can be shown with learning curves. Underfitting is
-            when a model has not learnt all the features it needs to reach its
-            goal of approximating the underlying function. The most prominent reasons
-            for underfitting are:
-            <li>Not enough training time (in epochs)</li>
-            <li>Not enough complexity in the model</li>
+      <h4 class="page-title white-text teal">Convolutional Layer</h4>
+        <p>The Convolutional Layer configuration can be summarised with the following points:
+          <li>F = size of the filter used</li>
+          <li>C = number of channels (e.g. 3 for RGB)</li>
+          <li>The convolution operation is applied across all channels</li>
+          <li>Convolution is combined with a shared bias and input into an activatio
+            function</li>
+          <li>Padding and Stride parameters provide greater flexiblity of the layer</li>
         </p>
-        <p>Overfititng occurs when the model begins to learn the noise of the target
-            function instead of the features. The most prominent reasons for overfitting is:
-            <li>Not enough data points</li>
-            <li>Too much training time</li>
-            <li>Too high model complexity</li>
+        <p>The output of a convolutional layer is known as a feature map. Some of the
+          above points are shown in the picture below.
         </p>
-        <p>Thus, the optimal point at which to stop training the model, i.e. stop learning,
-            is at the intersection of underfitting and overfitting. This can be measured 
-            through the point at which the test/validation error begins to increase but the
-            training error decreases. This is shown in the learning curves below.
-        </p>
-        <img alt="Forward Pass" style="height:200px;" 
-        src="assets/img/blog/ICL_DL/DL_Part_0/One_H.PNG"/>
-        <img alt="Forward Pass" style="height:200px;" 
-        src="assets/img/blog/ICL_DL/DL_Part_0/Many_H.PNG"/>
+          <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Params_Correct_Calculation.PNG"/>
+        <p>Note how the number of parameters is now 735, whereas using fully connected layers
+          would have resulted in 13,500 parameters. A CNN's properties can be summarised with
+          the following points:
+          <li>Neurons act locally - sparse connectivity</li>
+          <li>Shared weights reduces complexity</li>
+          <li>Translation invariance</li>
+          <li>Flexiblity in input size</li>
+          <li>Hierachical structure of pattern detectors</li>
+          </p>
+          <p>The following drawing gives an example of how local neurons can learn to detect 
+            features relevant to a cat for binary classification - is the image of a cat or not.
+          </p>
+          <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Cat_feature_extraction.PNG"/>
+          <p>A more real example of feature extraction is shown below. 
+          </p>
+            <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Shallow_Deep_Patterns.PNG">
+          <p>The first few convolutional layers of a CNN extract low level features. In general, as you move through convolutional
+            layers in the network, more complex features are learnt. Thus, their combination gives
+            the network the best chance of successfully learning the underlying function for images.
+          </p>
     </div>
 
     <div class="card">
-      <h4 class="page-title white-text teal">Regularisation</h4>
-        <p>A popular tool to aid in ML model learning is regularisation. Regularisation
-            enforces an "overfit penalty" on the error function in an attempt to 
-            guide the model to the optimal point on the learning curve as described previously.
-        </p>
-        <p>There are various regularisation techniques, for example L2-Loss restricts the 
-            possible <b>w </b> weights to within a circle of values. However, they are all based
-            on a fundamental premise: Occam's Razor. Occam's Razor essentially states that
-            simpler is usually better. This is based on the scientific notion that
-            noise is not smooth, and an ML model's learning seeks to ignore noise. 
-            Regularisation Thus incentivises the model's learnt function towards smoother, simpler functions.
-        </p>
-        <p>Regularisation introduces another(s) hyperparameter, <b>lambda</b>, to the model. This hyperparameter
-            controls how much weighting the model attributes to regularisation. The effect of 
-            different <b>lambda</b> values on learning is shown below.
-        </p>
-        <img alt="Forward Pass" style="height:200px;" 
-        src="assets/img/blog/ICL_DL/DL_Part_0/Regularisation.PNG"/>
+      <h4 class="page-title white-text teal">Pooling Layer</h4>
+      <p>Pooling is a function that aggregates multiple inputs into a single value.
+        It is similar to convolution, however instead of a linear transformation it uses 
+        a pooling operation. The aggregation results in a reduction of the size of the layer output.
+        The pooling operation is the same across the input channels.
+      </p>
+      <p>The 2 most common pooling operations are Max Pooling and Average Pooling.
+        Max Pooling takes the highest value in the defined filter size (e.g. 2x2),
+        whereas average pooling produces an average. As such, there are no
+        learnable parameters in a pooling layer. These 2 operations are illustrated below.
+      </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Pooling.PNG"/>
+      <p>All pooling operations result in a downsampled output, and thus information
+        is lost. However, pooling can solve problems such as overfitting by reducing the 
+        number of parameters to learn and (hopefully) discarding more noise than important
+        features. The pictures below show the real effect of both a max pooling layer
+        and average pooling layer.
+      </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Pooling_Layer_Example.PNG"/>
+      <p>Pooling layers are used extensively in all the major CNN architectures, however it is
+        worth noting that they are technically not required for a CNN model.
+      </p>
     </div>
+
+    <div class="card">
+      <h4 class="page-title white-text teal">Fully Connected Layer</h4>
+      <p>The fully connected layer in a CNN is as described in the previous part.
+        It is used as the final learning phase, to map extracted features to desired 
+        outputs and thus provides a global view on all features. Before the fully connected
+        layer, reshaping of th previous layer output must be done to convert from a 2D tensor
+        to a 1D tensor. The image below shows how a convolutiona/pooling layer's output
+        is converted and passed through the fully connected layers. Therefore, the fully connected
+        layers form the last few layers of a CNN.
+      </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/FC_Layer.PNG"/>
+      <p>The output layer is also fully connected, however it is configured specifically to the
+        desired learning task. In the next sections we discuss the 3 most common ones: binary 
+        classification, multiclass classification, and regression.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4 class="page-title white-text teal">Binary Classification</h4>
+      <p>Binary classification tasks are best suited for the cross-entropy loss function
+        as the final output loss layer. The scalar output is effectively transformed to a probability
+        using the sigmoid function. Thus, a <b>y_hat</b> value of >= 0.5 can be thought of
+        as "True", while less than 0.5 is "False". The figure below shows an example of 
+        this using a binary dog classifier.
+      </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Binary_Classification.PNG"/>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Binary_Classification_Loss.PNG"/>
+      <p>The <b>y_hat</b> output is near 1, thus the model predicts "True": that the input image
+        did contain a dog. This is in fact the correct prediction (we can see in the picture a dog!)
+        so the cross-entropy loss function = 0. 
+      </p>
+      <p>MultiClass classification is simply an extension of binary classification, as we will see
+        in the next section.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4 class="page-title white-text teal">MultiClass Classification</h4>
+      <p>Tasks requiring multi class classification occur when there are multiple
+        outputs to choose from. Instead of "True" and "False", i.e. a scaler <b>y_hat</b>
+        value of [0,1], the output is a probability vector. For example, the task
+        could be to require classifying whether an image contains a dog, cat, horse, etc.
+        (any arbitrary number of animals). The output prediction <b>y_hat</b> would
+        then be the probability that the image is of each animal, and in general we
+        would choose to predict the highest probability element in the vector.
+      </p>
+      <p>The activation function and loss layer function are expansions of the binary
+        classification one, i.e. softmax and categorical cross-entropy error loss respectively.
+        The figure below shows the final layers of a CNN with the task of predicting 
+        the correct colour in an input image.
+      </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Multiclass_Classification.PNG"/>
+      <p>As green has the highest probability in the output, this would be predicted.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4 class="page-title white-text teal">Regression</h4>
+      <p>Tasks involving a <b>y</b> value that is continuous are best
+        suited for regression. A common example could be taking an input image of a 
+        house, and predicting its corresponding house price in dollars.
+      </p>
+      <p>There are a variety of loss functions used in regressions, each with similar
+        and distinct properties. The most common is L2 Loss, which is defined as:
+        <b>L_2 = (y_hat - y)^2</b>. L2 loss may be undesirable in some cases as it is 
+        highly sensitive to outliers, due to the squared term. Thus, another common loss
+        function is the L1 Loss: <b>L_1 = |y_hat - y|</b>.
+      </p>
+      <p>The figure below shows a regression loss layer.
+      </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Regression.PNG"/>
     </div>
   
 <div class="rightcolumn">
