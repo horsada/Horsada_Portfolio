@@ -96,7 +96,7 @@
             The filter weights are multiplied by the corresponding pixel feature (e.g. intensity)
             and are then added together. The process is shown mathematically in the 1D and 2D case below:
             <img alt="Convolution maths" style="height:300px;" 
-              src="assets/img/blog/ICL_DL/DL_Part_1/Convolution_Different_Filters.PNG"/>
+              src="assets/img/blog/ICL_DL/DL_Part_1/Convolution_maths.PNG"/>
           </p>
           <p>Putting both these concepts together, we can see the output of the convolutional filter
             below:
@@ -114,11 +114,13 @@
       <h4 class="page-title white-text teal">Padding and Stride</h4>
         <p>Padding is a technique where we append a value to the sides of the input before
           convolution using a filter. There are in general 3 forms of padding:
+        </p>
           <li>VALID: no padding</li>
           <li>SAME: add P = F - 1 zeros</li>
           <li>FULL: add P = 2(F-1) zeros</li>
-          The SAME padding results in <b>H_o = H_i</b> for Stride = 1 while FULL padding
-          results in <b>H_o = H_i + 2(F-1)</b> for Stride = 1. Below is an example of padding.
+        <p>
+        The SAME padding results in <b>H_o = H_i</b> for Stride = 1 while FULL padding
+        results in <b>H_o = H_i + 2(F-1)</b> for Stride = 1. Below is an example of padding.
         </p>
         <img alt="Convolution maths" style="height:300px;" 
               src="assets/img/blog/ICL_DL/DL_Part_1/Padding.PNG"/>
@@ -127,7 +129,7 @@
           2x2 skips one pixel horizontally and vertically. This is shown below.
         </p>
         <img alt="Convolution maths" style="height:300px;" 
-              src="assets/img/blog/ICL_DL/DL_Part_1/Padding.PNG"/>
+              src="assets/img/blog/ICL_DL/DL_Part_1/Strides.PNG"/>
         <p>With these prerequisite techniques now discussed, we can look at the convolutional layer
           as a whole, the fundamental layer of a CNN.
         </p>
@@ -227,19 +229,19 @@
       </p>
       <img alt="Convolution maths" style="height:300px;" 
               src="assets/img/blog/ICL_DL/DL_Part_1/Binary_Classification.PNG"/>
-      <img alt="Convolution maths" style="height:300px;" 
+      <img alt="Convolution maths" style="height:100px;" 
               src="assets/img/blog/ICL_DL/DL_Part_1/Binary_Classification_Loss.PNG"/>
       <p>The <b>y_hat</b> output is near 1, thus the model predicts "True": that the input image
         did contain a dog. This is in fact the correct prediction (we can see in the picture a dog!)
         so the cross-entropy loss function = 0. 
       </p>
-      <p>MultiClass classification is simply an extension of binary classification, as we will see
+      <p>Multiclass classification is simply an extension of binary classification, as we will see
         in the next section.
       </p>
     </div>
 
     <div class="card">
-      <h4 class="page-title white-text teal">MultiClass Classification</h4>
+      <h4 class="page-title white-text teal">Multiclass Classification</h4>
       <p>Tasks requiring multi class classification occur when there are multiple
         outputs to choose from. Instead of "True" and "False", i.e. a scaler <b>y_hat</b>
         value of [0,1], the output is a probability vector. For example, the task
@@ -255,8 +257,11 @@
       </p>
       <img alt="Convolution maths" style="height:300px;" 
               src="assets/img/blog/ICL_DL/DL_Part_1/Multiclass_Classification.PNG"/>
-      <p>As green has the highest probability in the output, this would be predicted.
+      <p>As green has the highest probability in the output, this would be predicted. Another example is shown below
+        using an animals example:
       </p>
+      <img alt="Convolution maths" style="height:300px;" 
+              src="assets/img/blog/ICL_DL/DL_Part_1/Multiclass_Classification_Animals.PNG"/>
     </div>
 
     <div class="card">
@@ -275,6 +280,7 @@
       </p>
       <img alt="Convolution maths" style="height:300px;" 
               src="assets/img/blog/ICL_DL/DL_Part_1/Regression.PNG"/>
+    </div>
     </div>
   
 <div class="rightcolumn">
