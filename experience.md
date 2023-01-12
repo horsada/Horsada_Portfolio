@@ -12,6 +12,9 @@ filename: experience
 
 ### Verisk Analytics: June 2022 - August 2022
 - Data Science Intern within the [Wood Mackenzie](https://www.woodmac.com/) Innovation & Analytics Lab
+- Worked on projects in Computer Vision and Time Series analysis
+- Provided macroeconomics and insurance teams with innovative improvements using Data Science methods
+- Technologies used: Python, Git, DVC, Linux
 
 <img src="mtl-logo_ccexpress.jpeg" width="300" height="200">
 
@@ -27,6 +30,3 @@ filename: experience
 - Intern Network Committee Member
 - [Engineering Education Scheme](https://www.etrust.org.uk/projects-age-13-17) Mentor
 - DBS-Certified Young Children STEM Mentor
-
-
-
